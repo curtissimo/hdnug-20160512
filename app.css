@@ -2345,6 +2345,10 @@ body {
   color: #333;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto Condensed';
+}
+
 a, a:visited {
   color: blue;
   text-decoration: none;
@@ -2356,7 +2360,7 @@ a, a:visited {
   justify-content: flex-end;
 
   min-height: 225px;
-  background-color: #2d8732;
+  background-color: #222931;
   padding: 1rem;
   color: white;
 }
@@ -2394,6 +2398,25 @@ a, a:visited {
   list-style-type: upper-roman;
 }
 
+#x-tag-logo {
+  font-family: Telex;
+  line-height: 4rem;
+  display: inline-block;
+  background-color: #222931;
+  vertical-align: middle;
+}
+
+#x-tag-logo > * {
+  display: inline-block;
+  line-height: 4rem;
+  vertical-align: middle;
+}
+
 .normal-weight {
   font-weight: 500;
+}
+
+.x-tag-logo-punc {
+  font-size: 60%;
+  color: #528CC1
 }

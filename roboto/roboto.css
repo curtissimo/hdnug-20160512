@@ -130,3 +130,15 @@ src: url(fonts/robotomono/RobotoMono-BoldItalic.ttf) format("truetype");
 font-weight: 700;
 font-style: italic;
 }
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src: url(fonts/robotocondensed/RobotoCondensed-Regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: italic;
+  font-weight: 400;
+  src: url(fonts/robotocondensed/RobotoCondensed-Italic.ttf) format('truetype');
+}
