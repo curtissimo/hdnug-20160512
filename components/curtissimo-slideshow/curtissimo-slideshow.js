@@ -35,8 +35,10 @@
       },
       inserted: function () {
         var tag = this;
+        tag._index = 0;
         tag.classList.add('curtissimo-slideshow');
         tag.resizeToWindow();
+        tag._originalTheme = tag.color;
         window.setTimeout(function () {
           xtag
             .queryChildren(tag, '*')
@@ -49,16 +51,38 @@
 
     methods: {
       advance: function () {
-        xtag
-          .queryChildren(this, '*')
+        var index = this._index,
+            children = xtag.queryChildren(this, '*'),
+            next = children[index + 1];
+        if (next === undefined) {
+          return;
+        }
+        this._index = index + 1;
+        if (next.color) {
+          this.color = next.color;
+        } else {
+          this.color = this._originalTheme;
+        }
+        children
           .forEach(function (slide) {
             var left = parseInt(slide.style.marginLeft);
             slide.style.marginLeft = (left - window.innerWidth) + 'px';
           });
       },
       retreat: function () {
-        xtag
-          .queryChildren(this, '*')
+        var index = this._index,
+            children = xtag.queryChildren(this, '*'),
+            next = children[index - 1];
+        if (next === undefined) {
+          return;
+        }
+        this._index = index - 1;
+        if (next.color) {
+          this.color = next.color;
+        } else {
+          this.color = this._originalTheme;
+        }
+        children
           .forEach(function (slide) {
             var left = parseInt(slide.style.marginLeft);
             slide.style.marginLeft = (left + window.innerWidth) + 'px';
