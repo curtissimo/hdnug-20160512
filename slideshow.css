@@ -1,0 +1,56 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #fafafa;
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto Condensed';
+}
+
+a, a:visited {
+  color: #2196F3;
+  text-decoration: none;
+}
+
+.curtissimo-slide {
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+  height: 600px;
+  justify-content: center;
+}
+
+.curtissimo-slide > header {
+  text-align: center;
+}
+
+.curtissimo-slide > header * {
+  padding: 0;
+  margin: 0;
+}
+
+.curtissimo-slide > header > h1 {
+  font-size: 6em;
+}
+
+.curtissimo-slide > header > h2 {
+  font-size: 5em;
+}
+
+.curtissimo-slide.curtissimo-theme-black {
+  color: white;
+  background-color: black;
+}
+
+.curtissimo-slide.curtissimo-theme-indigo {
+  color: #FFF;
+  background-color: #3F51B5;
+}
+
+.curtissimo-slide.curtissimo-theme-light-blue {
+  color: #333;
+  background-color: #03A9F4;
+}
