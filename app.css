@@ -2396,6 +2396,9 @@ a, a:visited {
 
 #toc {
   list-style-type: upper-roman;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #x-tag-logo {
