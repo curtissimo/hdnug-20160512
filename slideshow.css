@@ -21,6 +21,7 @@ a, a:visited {
   left: 0;
   right: 0;
   bottom: 0;
+  overflow-x: hidden;
 }
 
 .curtissimo-slide {
@@ -31,6 +32,10 @@ a, a:visited {
   height: 600px;
   justify-content: center;
   transform-origin: top left;
+}
+
+.curtissimo-does-sliding {
+  transition: margin-left .5s ease-in-out;
 }
 
 .curtissimo-slide > header {

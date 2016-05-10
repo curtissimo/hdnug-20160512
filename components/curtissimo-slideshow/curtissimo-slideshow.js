@@ -14,7 +14,6 @@
   }
 
   function calculatePosition (length, scale, maxLength) {
-    console.log(length, scale, maxLength);
     var side = (length * scale) - maxLength,
         center = side / 2,
         int = Math.floor(center),
@@ -24,15 +23,47 @@
 
   xtag.register('curtissimo-slideshow', {
     lifecycle: {
+      created: function () {
+        var handler = (function (e) {
+          if (e.keyCode === 39) {
+            this.advance();
+          } else if (e.keyCode === 37) {
+            this.retreat();
+          }
+        }).bind(this);
+        window.addEventListener('keydown', handler, false);
+      },
       inserted: function () {
-        this.classList.add('curtissimo-slideshow');
-        if (this.autoResize === undefined) {
-          this.autoResize = true;
-        }
+        var tag = this;
+        tag.classList.add('curtissimo-slideshow');
+        tag.resizeToWindow();
+        window.setTimeout(function () {
+          xtag
+            .queryChildren(tag, '*')
+            .forEach(function (slide) {
+              slide.classList.add('curtissimo-does-sliding');
+            });
+        }, 0);
       }
     },
 
     methods: {
+      advance: function () {
+        xtag
+          .queryChildren(this, '*')
+          .forEach(function (slide) {
+            var left = parseInt(slide.style.marginLeft);
+            slide.style.marginLeft = (left - window.innerWidth) + 'px';
+          });
+      },
+      retreat: function () {
+        xtag
+          .queryChildren(this, '*')
+          .forEach(function (slide) {
+            var left = parseInt(slide.style.marginLeft);
+            slide.style.marginLeft = (left + window.innerWidth) + 'px';
+          });
+      },
       resizeToWindow: function (event) {
         var width = this.slideWidth,
             height = this.slideHeight,
@@ -46,8 +77,9 @@
             s = 'transform: scale(' + scale + '); left: ' + left + 'px; top: ' + top + 'px;';
         xtag
           .queryChildren(this, '*')
-          .forEach(function (slide) {
+          .forEach(function (slide, index) {
             slide.setAttribute('style', s);
+            slide.style.marginLeft = (maxWidth * index) + 'px';
           });
       }
     },
@@ -68,6 +100,25 @@
             window.addEventListener('resize', this._handler);
           } else {
             window.removeEventListener('resize', this._handler);
+          }
+        }
+      },
+
+      color: {
+        attribute: {},
+        get: function () {
+          return this._theme;
+        },
+        set: function (value) {
+          var themeName;
+          if (this._theme) {
+            themeName = this._theme.toLowerCase().replace(/\s/g, '-');
+            this.classList.remove('curtissimo-theme-' + themeName);
+          }
+          this._theme = value;
+          if (value) {
+            themeName = this._theme.toLowerCase().replace(/\s/g, '-');
+            this.classList.add('curtissimo-theme-' + themeName);
           }
         }
       },
