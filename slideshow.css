@@ -53,20 +53,20 @@ a, a:visited {
   transition: margin-left .5s ease-in-out;
 }
 
-.curtissimo-slide > header {
+.curtissimo-slide {
   text-align: center;
 }
 
-.curtissimo-slide > header * {
+.curtissimo-slide > * {
   padding: 0;
   margin: 0;
 }
 
-.curtissimo-slide > header > h1 {
+.curtissimo-slide h1 {
   font-size: 6em;
 }
 
-.curtissimo-slide > header > h2 {
+.curtissimo-slide h2 {
   font-size: 5em;
 }
 
@@ -187,4 +187,16 @@ a, a:visited {
   color: #FFF;
   background-color: #607D8B;
   background-image: radial-gradient(#B0BEC5, #607D8B);
+}
+
+.to-upper {
+  text-transform: uppercase;
+}
+
+.rotate-30 {
+  transform: rotate(-15deg);
+}
+
+.with-shadow {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, .75);
 }
