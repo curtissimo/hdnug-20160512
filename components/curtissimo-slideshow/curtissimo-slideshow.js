@@ -32,17 +32,34 @@
           }
         }).bind(this);
         window.addEventListener('keydown', handler, false);
+        this._index = window.location.hash;
       },
       inserted: function () {
-        var tag = this;
-        tag._index = 0;
+        var tag = this,
+            children = xtag.queryChildren(this, '*'),
+            hash = window.location.hash || '#0',
+            index = tag._index = parseInt(hash.substring(1)),
+            next = children[index];
+        if (index > children.length) {
+          tag._index = 0;
+          next = children[0];
+        }
         tag.classList.add('curtissimo-slideshow');
         tag.resizeToWindow();
         tag._originalTheme = tag.color;
+        children
+          .forEach(function (slide, i, children) {
+            var left = (i - index) * window.innerWidth;
+            slide.style.marginLeft = left + 'px';
+          });
+        if (next.color) {
+          tag.color = next.color;
+        } else {
+          tag.color = tag._originalTheme;
+        }
         window.setTimeout(function () {
-          xtag
-            .queryChildren(tag, '*')
-            .forEach(function (slide) {
+          children
+            .forEach(function (slide, index, children) {
               slide.classList.add('curtissimo-does-sliding');
             });
         }, 0);
@@ -53,13 +70,17 @@
       advance: function () {
         var index = this._index,
             children = xtag.queryChildren(this, '*'),
-            next = children[index + 1];
+            next = children[index + 1],
+            tag = this;
         if (next === undefined) {
           return;
         }
         this._index = index + 1;
+        window.location.hash = this._index;
         if (next.color) {
-          this.color = next.color;
+          window.setTimeout(function () {
+            tag.color = next.color;
+          }, 500);
         } else {
           this.color = this._originalTheme;
         }
@@ -72,13 +93,17 @@
       retreat: function () {
         var index = this._index,
             children = xtag.queryChildren(this, '*'),
-            next = children[index - 1];
+            next = children[index - 1],
+            tag = this;
         if (next === undefined) {
           return;
         }
         this._index = index - 1;
+        window.location.hash = this._index;
         if (next.color) {
-          this.color = next.color;
+          window.setTimeout(function () {
+            tag.color = next.color;
+          }, 500);
         } else {
           this.color = this._originalTheme;
         }
@@ -102,8 +127,9 @@
         xtag
           .queryChildren(this, '*')
           .forEach(function (slide, index) {
-            slide.setAttribute('style', s);
-            slide.style.marginLeft = (maxWidth * index) + 'px';
+            var marginLeft = window.getComputedStyle(slide).getPropertyValue('margin-left'),
+                slideStyle = s + 'margin-left: ' + marginLeft;
+            slide.setAttribute('style', slideStyle);
           });
       }
     },

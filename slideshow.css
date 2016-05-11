@@ -58,16 +58,29 @@ a, a:visited {
 }
 
 .curtissimo-slide > * {
-  padding: 0;
   margin: 0;
+  margin-bottom: 1rem;
+}
+
+.curtissimo-slide ol,
+.curtissimo-slide ul {
+  list-style: none;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+}
+
+.curtissimo-slide {
+  font-size: 3rem;
 }
 
 .curtissimo-slide h1 {
-  font-size: 6em;
+  font-size: 6rem;
 }
 
 .curtissimo-slide h2 {
-  font-size: 5em;
+  font-size: 5.5rem;
 }
 
 .curtissimo-theme-black {
@@ -198,5 +211,9 @@ a, a:visited {
 }
 
 .with-shadow {
-  text-shadow: 0 2px 4px rgba(0, 0, 0, .75);
+  text-shadow: 0 4px 4px rgba(0, 0, 0, .75);
+}
+
+.super-big {
+  font-size: 300% !important;
 }

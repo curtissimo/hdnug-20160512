@@ -2378,6 +2378,7 @@ a, a:visited {
 #secondary-header {
   display: flex;
   padding: 0 .5rem;
+  background-color: #ECEFF1;
 }
 
 #secondary-header > * {
@@ -2392,13 +2393,6 @@ a, a:visited {
 
 #secondary-header > :last-child {
   text-align: right;
-}
-
-#toc {
-  list-style-type: upper-roman;
-  max-width: 640px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 #x-tag-logo {
@@ -2422,4 +2416,22 @@ a, a:visited {
 .x-tag-logo-punc {
   font-size: 60%;
   color: #528CC1
+}
+
+.toc-header, .toc-list {
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.toc-list {
+  margin-top: 0;
+  list-style-type: upper-roman;
+}
+
+.toc-header {
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+  text-transform: uppercase;
 }
