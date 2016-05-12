@@ -1,0 +1,124 @@
+.curtissimo-theme-black {
+  color: white;
+  background-color: black;
+}
+
+.curtissimo-theme-indigo {
+  color: #FFF;
+  background-color: #3F51B5;
+  background-image: radial-gradient(#9FA8DA, #3F51B5);
+}
+
+.curtissimo-theme-light-blue {
+  color: #333;
+  background-color: #03A9F4;
+  background-image: radial-gradient(#81D4FA, #03A9F4);
+}
+
+.curtissimo-theme-red {
+  color: #FFF;
+  background-color: #F44336;
+  background-image: radial-gradient(#EF9A9A, #F44336);
+}
+
+.curtissimo-theme-pink {
+  color: #FFF;
+  background-color: #E91E63;
+  background-image: radial-gradient(#F48FB1, #E91E63);
+}
+
+.curtissimo-theme-purple {
+  color: #FFF;
+  background-color: #9C27B0;
+  background-image: radial-gradient(#CE93D8, #9C27B0);
+}
+
+.curtissimo-theme-deep-purple {
+  color: #FFF;
+  background-color: #673AB7;
+  background-image: radial-gradient(#B39DDB, #673AB7);
+}
+
+.curtissimo-theme-blue {
+  color: #FFF;
+  background-color: #2196F3;
+  background-image: radial-gradient(#90CAF9, #2196F3);
+}
+
+.curtissimo-theme-cyan {
+  color: #000;
+  background-color: #00BCD4;
+  background-image: radial-gradient(#80DEEA, #00BCD4);
+}
+
+.curtissimo-theme-teal {
+  color: #FFF;
+  background-color: #009688;
+  background-image: radial-gradient(#80CBC4, #009688);
+}
+
+.curtissimo-theme-green {
+  color: #000;
+  background-color: #4CAF50;
+  background-image: radial-gradient(#A5D6A7, #4CAF50);
+}
+
+.curtissimo-theme-light-green {
+  color: #000;
+  background-color: #8BC34A;
+  background-image: radial-gradient(#C5E1A5, #8BC34A);
+}
+
+.curtissimo-theme-lime {
+  color: #000;
+  background-color: #CDDC39;
+  background-image: radial-gradient(#E6EE9C, #CDDC39);
+}
+
+.curtissimo-theme-yellow {
+  color: #000;
+  background-color: #FFEB3B;
+  background-image: radial-gradient(#FFF59D, #FFEB3B);
+}
+
+.curtissimo-theme-amber {
+  color: #000;
+  background-color: #FFC107;
+  background-image: radial-gradient(#FFE082, #FFC107);
+}
+
+.curtissimo-theme-orange {
+  color: #000;
+  background-color: #FF9800;
+  background-image: radial-gradient(#FFCC80, #FF9800);
+}
+
+.curtissimo-theme-deep-orange {
+  color: #FFF;
+  background-color: #FF5722;
+  background-image: radial-gradient(#FFAB91, #FF5722);
+}
+
+.curtissimo-theme-brown {
+  color: #FFF;
+  background-color: #5D4037;
+  background-image: radial-gradient(#8D6E63, #5D4037);
+}
+
+.curtissimo-theme-grey {
+  color: #000;
+  background-color: #BCAAA4;
+  background-image: radial-gradient(#EEEEEE, #BCAAA4);
+}
+
+.curtissimo-theme-blue-grey {
+  color: #FFF;
+  background-color: #546E7A;
+  background-image: radial-gradient(#78909C, #546E7A);
+}
+
+.curtissimo-theme-black {
+  color: #FFF;
+  background-color: #000;
+  background-image: radial-gradient(#333, #000);
+}

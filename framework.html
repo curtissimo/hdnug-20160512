@@ -6,11 +6,102 @@
     <link href="telex/telex.css" rel="stylesheet">
     <link href="slideshow.css" rel="stylesheet">
     <link href="highlight.css" rel="stylesheet">
+    <link href="themes.css" rel="stylesheet">
   </head>
   <body>
     <curtissimo-slideshow auto-resize color="brown">
       <curtissimo-slide>
         <h1>Let's Build Something</h1>
+      </curtissimo-slide>
+      <curtissimo-slide>
+        <h1>Features</h1>
+        <ul>
+          <li>slideshow theme</li>
+          <li>color override for slide</li>
+          <li>click advances presentation</li>
+          <li>remember current slide</li>
+          <li>keyboard navigation</li>
+          <li>resize content to window</li>
+        </ul>
+      </curtissimo-slide>
+      <curtissimo-slide color="pink">
+        <h1>This'd Be Good</h1>
+        <table class="highlighttable">
+          <tr>
+            <td class="code">
+              <div class="highlight">
+<pre><span></span><span class="p">&lt;</span><span class="nt">curtissimo-slideshow</span> <span class="na">auto-resize</span> <span class="na">color</span><span class="o">=</span><span class="s">"brown"</span><span class="p">&gt;</span>
+  <span class="c">&lt;!-- more slides here --&gt;</span>
+  
+  <span class="p">&lt;</span><span class="nt">curtissimo-slide</span> <span class="na">color</span><span class="o">=</span><span class="s">"pink"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>This'd Be Good<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="c">&lt;!-- code snippet here --&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">curtissimo-slide</span><span class="p">&gt;</span>
+
+  <span class="c">&lt;!-- more slides here --&gt;</span>
+<span class="p">&lt;/</span><span class="nt">curtissimo-slideshow</span><span class="p">&gt;</span>
+</pre>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </curtissimo-slide>
+      <curtissimo-slide>
+        <h1>Define Elements</h1>
+        <table class="highlighttable">
+          <tr>
+            <td class="code">
+              <div class="highlight">
+<pre><span></span><span class="nx">xtag</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="s1">'curtissimo-slide'</span><span class="p">,</span> <span class="p">{});</span>
+<span class="nx">xtag</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="s1">'curtissimo-slideshow'</span><span class="p">,</span> <span class="p">{});</span>
+</pre>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </curtissimo-slide>
+      <curtissimo-slide>
+        <h1>Slideshow Theme</h1>
+        <ul>
+          <li>expand slideshow to cover screen</li>
+          <li>change to appropriate color</li>
+        </ul>
+      </curtissimo-slide>
+      <curtissimo-slide>
+        <h1>Color Override for Slide</h1>
+        <ul>
+          <li>query current slide for color</li>
+          <li>set slideshow to color, if exists</li>
+        </ul>
+      </curtissimo-slide>
+      <curtissimo-slide>
+        <h1>Click Advances Presentation</h1>
+        <ul>
+          <li>subscribe to event</li>
+          <li>advance slideshow</li>
+        </ul>
+      </curtissimo-slide>
+      <curtissimo-slide>
+        <h1>Remember Current Slide</h1>
+        <ul>
+          <li>write slide index to location</li>
+          <li>read slide index on load</li>
+        </ul>
+      </curtissimo-slide>
+      <curtissimo-slide>
+        <h1>Keyboard Nav</h1>
+        <ul>
+          <li>subscribe to keyboard events</li>
+          <li>advance and retreat slides</li>
+        </ul>
+      </curtissimo-slide>
+      <curtissimo-slide>
+        <h1>Resize Content</h1>
+        <ul>
+          <li>subscribe to window resize</li>
+          <li>determine appropriate transform</li>
+          <li>write to all children</li>
+        </ul>
       </curtissimo-slide>
     </curtissimo-slideshow>
     <a href="/" class="fab">&#10502;</a>

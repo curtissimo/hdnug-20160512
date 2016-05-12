@@ -6,6 +6,12 @@
       }
     },
 
+    events: {
+      tap: function () {
+        this.parentNode.advance();
+      }
+    },
+
     accessors: {
       color: {
         attribute: {}

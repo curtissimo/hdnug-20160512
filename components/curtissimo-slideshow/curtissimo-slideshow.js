@@ -67,15 +67,15 @@
     },
 
     methods: {
-      advance: function () {
+      _move: function (newIndex, fn) {
         var index = this._index,
             children = xtag.queryChildren(this, '*'),
-            next = children[index + 1],
+            next = children[newIndex],
             tag = this;
         if (next === undefined) {
           return;
         }
-        this._index = index + 1;
+        this._index = newIndex;
         window.location.hash = this._index;
         if (next.color) {
           window.setTimeout(function () {
@@ -87,31 +87,18 @@
         children
           .forEach(function (slide) {
             var left = parseInt(slide.style.marginLeft);
-            slide.style.marginLeft = (left - window.innerWidth) + 'px';
+            slide.style.marginLeft = fn(left, window.innerWidth) + 'px';
           });
       },
+      advance: function () {
+        this._move(this._index + 1, function (a, b) {
+          return a - b;
+        });
+      },
       retreat: function () {
-        var index = this._index,
-            children = xtag.queryChildren(this, '*'),
-            next = children[index - 1],
-            tag = this;
-        if (next === undefined) {
-          return;
-        }
-        this._index = index - 1;
-        window.location.hash = this._index;
-        if (next.color) {
-          window.setTimeout(function () {
-            tag.color = next.color;
-          }, 500);
-        } else {
-          this.color = this._originalTheme;
-        }
-        children
-          .forEach(function (slide) {
-            var left = parseInt(slide.style.marginLeft);
-            slide.style.marginLeft = (left + window.innerWidth) + 'px';
-          });
+        this._move(this._index - 1, function (a, b) {
+          return a + b;
+        });
       },
       resizeToWindow: function (event) {
         var width = this.slideWidth,
@@ -161,15 +148,17 @@
         },
         set: function (value) {
           var themeName;
-          if (this._theme) {
-            themeName = this._theme.toLowerCase().replace(/\s/g, '-');
-            this.classList.remove('curtissimo-theme-' + themeName);
+
+          function setTheme (name, fnName) {
+            if (name) {
+              themeName = name.toLowerCase().replace(/\s/g, '-');
+              this.classList[fnName]('curtissimo-theme-' + themeName);
+            }
           }
+
+          setTheme.call(this, this._theme, 'remove');
           this._theme = value;
-          if (value) {
-            themeName = this._theme.toLowerCase().replace(/\s/g, '-');
-            this.classList.add('curtissimo-theme-' + themeName);
-          }
+          setTheme.call(this, this._theme, 'add');
         }
       },
 
