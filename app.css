@@ -2429,6 +2429,10 @@ a, a:visited {
   list-style-type: upper-roman;
 }
 
+.toc-list li {
+  margin-bottom: .5em;
+}
+
 .toc-header {
   font-size: 4rem;
   margin-bottom: 0.5rem;
