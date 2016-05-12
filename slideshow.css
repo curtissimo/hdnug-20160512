@@ -58,7 +58,7 @@ a, a:visited {
 }
 
 .curtissimo-slide > * {
-  margin: 0;
+  margin: 0 auto;
   margin-bottom: 1rem;
 }
 
@@ -80,7 +80,12 @@ a, a:visited {
 }
 
 .curtissimo-slide h2 {
-  font-size: 5.5rem;
+  font-size: 5rem;
+}
+
+.curtissimo-slide h3 {
+  font-size: 4rem;
+  font-style: italic;
 }
 
 .curtissimo-theme-black {
@@ -202,11 +207,17 @@ a, a:visited {
   background-image: radial-gradient(#B0BEC5, #607D8B);
 }
 
+.curtissimo-theme-black {
+  color: #FFF;
+  background-color: #333;
+  background-image: radial-gradient(#333, #000);
+}
+
 .to-upper {
   text-transform: uppercase;
 }
 
-.rotate-30 {
+.rotate-15 {
   transform: rotate(-15deg);
 }
 
@@ -216,4 +227,26 @@ a, a:visited {
 
 .super-big {
   font-size: 300% !important;
+}
+
+.tight-below {
+  margin-bottom: 0;
+}
+
+.highlighttable {
+  font-size: 2rem;
+  text-align: left;
+}
+
+.highlighttable pre {
+  margin: 0;
+  padding: .25rem;
+}
+
+.linenos {
+
+}
+
+.code {
+  width: 100%;
 }

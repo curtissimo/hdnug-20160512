@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "webcomponents.js": "^0.7.22"
+    "webcomponents.js": "^0.7.22",
+    "x-tag": "^1.5.7"
   }
 }
