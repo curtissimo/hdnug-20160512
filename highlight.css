@@ -61,4 +61,5 @@
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
-.highlight span:hover { background: #ff9 }
+.highlight span:hover { background: #ccc }
+.highlight .highlighted { background-color: #ff9; }

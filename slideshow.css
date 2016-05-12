@@ -77,15 +77,18 @@ a, a:visited {
 
 .curtissimo-slide h1 {
   font-size: 6rem;
+  text-shadow: 0 1px 1px rgba(32, 32, 32, .5);
 }
 
 .curtissimo-slide h2 {
   font-size: 5rem;
+  text-shadow: 0 1px 1px rgba(32, 32, 32, .5);
 }
 
 .curtissimo-slide h3 {
   font-size: 4rem;
   font-style: italic;
+  text-shadow: 0 1px 1px rgba(32, 32, 32, .5);
 }
 
 .curtissimo-theme-black {
@@ -191,26 +194,40 @@ a, a:visited {
 
 .curtissimo-theme-brown {
   color: #FFF;
-  background-color: #795548;
-  background-image: radial-gradient(#BCAAA4, #795548);
+  background-color: #5D4037;
+  background-image: radial-gradient(#8D6E63, #5D4037);
 }
 
 .curtissimo-theme-grey {
   color: #000;
-  background-color: #9E9E9E;
+  background-color: #BCAAA4;
   background-image: radial-gradient(#EEEEEE, #BCAAA4);
 }
 
 .curtissimo-theme-blue-grey {
   color: #FFF;
-  background-color: #607D8B;
-  background-image: radial-gradient(#B0BEC5, #607D8B);
+  background-color: #546E7A;
+  background-image: radial-gradient(#78909C, #546E7A);
 }
 
 .curtissimo-theme-black {
   color: #FFF;
-  background-color: #333;
+  background-color: #000;
   background-image: radial-gradient(#333, #000);
+}
+
+#x-tag-logo {
+  font-family: Telex;
+  line-height: 4rem;
+  display: inline-block;
+  vertical-align: middle;
+  color: white;
+}
+
+#x-tag-logo > * {
+  display: inline-block;
+  line-height: 4rem;
+  vertical-align: middle;
 }
 
 .to-upper {
@@ -236,17 +253,24 @@ a, a:visited {
 .highlighttable {
   font-size: 2rem;
   text-align: left;
+  width: 700px;
 }
 
 .highlighttable pre {
   margin: 0;
   padding: .25rem;
-}
-
-.linenos {
-
+  color: black;
 }
 
 .code {
   width: 100%;
+}
+
+.normal-weight {
+  font-weight: 500;
+}
+
+.x-tag-logo-punc {
+  font-size: 60%;
+  color: #DD2C00;
 }

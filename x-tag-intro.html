@@ -1,0 +1,233 @@
+<!doctype html>
+<html>
+  <head>
+    <title>X-Tag</title>
+    <link href="roboto/roboto.css" rel="stylesheet">
+    <link href="telex/telex.css" rel="stylesheet">
+    <link href="slideshow.css" rel="stylesheet">
+    <link href="highlight.css" rel="stylesheet">
+  </head>
+  <body>
+    <curtissimo-slideshow auto-resize color="blue grey">
+      <curtissimo-slide>
+        <h1>
+          <span id="x-tag-logo">
+            <span class="x-tag-logo-punc">&#10094;</span><span>X</span><span class="x-tag-logo-punc">&#10095;</span>
+          </span>
+        </h1>
+        <h2>X-Tag</h2>
+      </curtissimo-slide>
+      <curtissimo-slide>
+        <h1>Eases Creation</h1>
+        <ol>
+          <li>registration</li>
+          <li>initial content</li>
+          <li>lifecycle</li>
+          <li>methods</li>
+          <li>accessors</li>
+          <li>events</li>
+          <li>pseudos</li>
+        </ol>
+      </curtissimo-slide>
+      <curtissimo-slide>
+        <h1>Registration</h1>
+        <table class="highlighttable">
+          <tr>
+            <td class="code">
+              <div class="highlight">
+<pre><span></span><span class="p">&lt;</span><span class="nt">curtissimo-slide</span><span class="p">&gt;</span>
+  <span class="c">&lt;!-- interesting content --&gt;</span>
+<span class="p">&lt;/</span><span class="nt">curtissimo-slide</span><span class="p">&gt;</span>
+</pre>
+              </div>
+            </td>
+          </tr>
+        </table>
+        <table class="highlighttable">
+          <tr>
+            <td class="code">
+              <div class="highlight">
+<pre><span class="highlighted"><span class="nx">xtag</span><span class="p">.</span><span class="nx">register</span></span><span class="p">(</span><span class="s1">'curtissimo-slide'</span><span class="p">,</span> <span class="p">{</span>
+  <span class="c1">// interesting stuff to</span>
+  <span class="c1">// define the slide element</span>
+<span class="p">});</span>
+</pre>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </curtissimo-slide>
+      <curtissimo-slide>
+        <h1>Initial Content</h1>
+        <table class="highlighttable">
+          <tr>
+            <td class="code">
+              <div class="highlight">
+<pre><span></span><span class="nx">xtag</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="s1">'another-tag'</span><span class="p">,</span> <span class="p">{</span>
+  <span class="highlighted"><span class="nx">content</span><span class="o">:</span> <span class="s1">'&lt;b&gt;Loading...&lt;/b&gt;'</span></span>
+<span class="p">});</span>
+</pre>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </curtissimo-slide>
+      <curtissimo-slide>
+        <h1>Lifecycle</h1>
+        <table class="highlighttable">
+          <tr>
+            <td class="code">
+              <div class="highlight">
+<pre><span></span><span class="nx">xtag</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="s1">'your-tag'</span><span class="p">,</span> <span class="p">{</span>
+  <span class="nx">lifecycle</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx highlighted">created</span><span class="o">:</span>  <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">},</span>
+    <span class="nx highlighted">inserted</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">},</span>
+    <span class="nx highlighted">removed</span><span class="o">:</span>  <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">},</span>
+
+    <span class="nx highlighted">attributeChanged</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</pre>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </curtissimo-slide>
+      <curtissimo-slide>
+        <h1>Methods</h1>
+        <table class="highlighttable">
+          <tr>
+            <td class="code">
+              <div class="highlight">
+<pre><span></span><span class="nx">xtag</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="s1">'my-spinner'</span><span class="p">,</span> <span class="p">{</span>
+<span class="highlighted">  <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">pause</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">duration</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span>
+  <span class="p">}</span></span>
+<span class="p">});</span>
+
+<span></span><span class="nb">document</span>
+  <span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'#spinner'</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">pause</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+</pre>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </curtissimo-slide>
+      <curtissimo-slide>
+        <h1>Accessors</h1>
+        <table class="highlighttable">
+          <tr>
+            <td class="code">
+              <div class="highlight">
+<pre><span></span><span class="nx">xtag</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="s1">'code-editor'</span><span class="p">,</span> <span class="p">{</span>
+<span class="highlighted">  <span class="nx">accessors</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">theme</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">attribute</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">validate</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">if</span> <span class="p">(</span><span class="nx">val</span> <span class="o">===</span> <span class="s1">'light'</span><span class="p">)</span> <span class="k">return</span> <span class="nx">val</span><span class="p">;</span>
+          <span class="k">return</span> <span class="s1">'dark'</span><span class="p">;</span>
+        <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="nx">get</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">},</span>
+      <span class="nx">set</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span></span>
+<span class="p">});</span>
+</pre>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </curtissimo-slide>
+      <curtissimo-slide>
+        <h1>Accessors</h1>
+        <table class="highlighttable">
+          <tr>
+            <td class="code">
+              <div class="highlight">
+<pre><span></span><span class="p">&lt;</span><span class="nt">code-editor</span> <span class="highlighted"><span class="na">theme</span><span class="o">=</span><span class="s">"light"</span></span><span class="p">&gt;</span>
+let i = 3;
+<span class="p">&lt;/</span><span class="nt">code-editor</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">code-editor</span> <span class="highlighted"><span class="na">theme</span><span class="o">=</span><span class="s">"blue"</span></span><span class="p">&gt;</span>
+const SIZE = 1024;
+<span class="p">&lt;/</span><span class="nt">code-editor</span><span class="p">&gt;</span>
+</pre>
+              </div>
+            </td>
+          </tr>
+        </table>
+        <table class="highlighttable">
+          <tr>
+            <td class="code">
+              <div class="highlight">
+<pre><span></span><span class="nb">document</span>
+  <span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'code-editor'</span><span class="p">)</span>
+  <span class="highlighted"><span class="p">.</span><span class="nx">theme</span> <span class="o">=</span> <span class="s1">'dark'</span></span><span class="p">;</span>
+</pre>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </curtissimo-slide>
+      <curtissimo-slide>
+        <h1>Events</h1>
+        <table class="highlighttable">
+          <tr>
+            <td class="code">
+              <div class="highlight">
+<pre><span></span><span class="nx">xtag</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="s1">'drawing-pen'</span><span class="p">,</span> <span class="p">{</span>
+<span class="highlighted">  <span class="nx">events</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">touchdown</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">},</span>
+    <span class="nx">move</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span>
+  <span class="p">}</span></span>
+<span class="p">});</span>
+</pre>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </curtissimo-slide>
+      <curtissimo-slide color="red">
+        <h1>Pseudos</h1>
+        <p>Not in example.</p>
+        <p>Not covered, here.</p>
+        <p>Sorry.</p>
+        <p><pre>:(</pre></p>
+      </curtissimo-slide>
+      <curtissimo-slide>
+        <h1>Extra Stuff</h1>
+        <table class="highlighttable">
+          <tr>
+            <td class="code">
+              <div class="highlight">
+<pre><span></span><span class="kd">var</span> <span class="nx">elem</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'my-element'</span><span class="p">);</span>
+
+<span class="nx">xtag</span><span class="p">.</span><span class="nx highlighted">query</span><span class="p">(</span><span class="nx">elem</span><span class="p">,</span> <span class="s1">'button'</span><span class="p">);</span>
+<span class="nx">xtag</span><span class="p">.</span><span class="nx highlighted">queryChildren</span><span class="p">(</span><span class="nx">elem</span><span class="p">,</span> <span class="s1">'button'</span><span class="p">);</span>
+
+<span class="nx">xtag</span><span class="p">.</span><span class="nx highlighted">createFragment</span><span class="p">(</span><span class="s1">'&lt;div&gt;Hello World!&lt;/div&gt;'</span><span class="p">);</span>
+
+<span class="nx">xtag</span><span class="p">.</span><span class="nx highlighted">addEvent</span><span class="p">(</span><span class="nx">elem</span><span class="p">,</span> <span class="s1">'click'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+  <span class="cm">/* handle event here */</span>
+<span class="p">});</span>
+<span class="nx">xtag</span><span class="p">.</span><span class="nx highlighted">fireEvent</span><span class="p">(</span><span class="nx">elem</span><span class="p">,</span> <span class="s1">'click'</span><span class="p">,</span> <span class="p">{</span>
+  details: <span class="p">{</span> <span class="cm">/* details here */</span> <span class="p">}</span>,
+  bubbles: true /* or false */,
+  cancelable: true /* or false */
+<span class="p">});</span>
+</pre>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </curtissimo-slide>
+    </curtissimo-slideshow>
+    <a href="/" class="fab">&#10502;</a>
+    <script src="node_modules/webcomponents.js/webcomponents.js"></script>
+    <script src="node_modules/X-Tag/dist/X-Tag-core.js"></script>
+    <script src="components/curtissimo-slide/curtissimo-slide.js"></script>
+    <script src="components/curtissimo-slideshow/curtissimo-slideshow.js"></script>
+  </body>
+</html>
