@@ -2359,7 +2359,7 @@ a, a:visited {
   flex-direction: column;
   justify-content: flex-end;
 
-  min-height: 225px;
+  min-height: 200px;
   background-color: #222931;
   padding: 1rem;
   color: white;
